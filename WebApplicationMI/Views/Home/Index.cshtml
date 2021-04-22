@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm("CreateContainer", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit"
+                   value="Create Container"
+                   id="Submit"
+                   class="btn btn-default btn-primary"
+                   onclick="location.href='@Url.Action("CreateContainer", "Home")'" />
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("CreateBlob", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit"
+                   value="Create Blob" id="Submit"
+                   class="btn btn-default btn-primary"
+                   onclick="location.href='@Url.Action("CreateBlob", "Home")'" />
+        </div>
+        <div class="form-group">
+            @Html.Raw(@ViewBag.Message)
+        </div>
+    </div>
+}
